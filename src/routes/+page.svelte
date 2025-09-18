@@ -1,0 +1,1 @@
+<h1 class="text-4xl text-white flex justify-center items-center">Hello</h1>
