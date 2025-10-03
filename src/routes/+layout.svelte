@@ -1,8 +1,28 @@
-<script lang="ts">
+<script>
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import Navbar from '$lib/components/navbar.svelte';
+    import { get } from 'svelte/store';
+    import { page } from '$app/stores';
+    import { afterNavigate } from '$app/navigation';
 	
+	var authenticated = false; // bool
+	
+
+	afterNavigate(() => {
+		if (!authenticated) {
+			if (!get(page).url.pathname.startsWith("/auth")) {
+				console.log("Authentication functionality in progress");
+			}
+		}
+
+		if (!get(page).url.pathname.split("/")[1]) {
+			document.title = "home | pulse"
+		} else {
+			document.title = get(page).url.pathname.split("/")[1] + " | pulse"
+		}
+	});
+
 	let { children } = $props();
 </script>
 
