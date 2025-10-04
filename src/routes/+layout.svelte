@@ -19,7 +19,7 @@
 		if (!get(page).url.pathname.split("/")[1]) {
 			document.title = "home | pulse"
 		} else {
-			document.title = get(page).url.pathname.split("/")[1] + " | pulse"
+			document.title = get(page).url.pathname.split("/")[1].toLowerCase() + " | pulse"
 		}
 	});
 
