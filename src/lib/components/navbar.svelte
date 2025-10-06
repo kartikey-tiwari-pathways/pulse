@@ -10,6 +10,7 @@
         <NavbarElement link="/articles">Articles</NavbarElement>
         <NavbarElement link="/create">Create</NavbarElement>
         <NavbarElement link="/dashboard">Dashboard</NavbarElement>
+        <NavbarElement link="/misc">Miscellaneous</NavbarElement>
     </div>
     <button class="flex justify-end w-8 h-8 cursor-pointer">
         <img src={searchIcon} alt="Search" />
