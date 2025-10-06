@@ -4,6 +4,7 @@
 	import Navbar from '$lib/components/navbar.svelte';
     import { get } from 'svelte/store';
     import { page } from '$app/stores';
+	import { page as statePage } from '$app/state'
     import { afterNavigate } from '$app/navigation';
 	
 	var authenticated = false; // bool
@@ -18,7 +19,7 @@
 
 		if (!get(page).url.pathname.split("/")[1]) {
 			document.title = "home | pulse"
-		} else {
+		} else if (!statePage.error) {
 			document.title = get(page).url.pathname.split("/")[1].toLowerCase() + " | pulse"
 		}
 	});
